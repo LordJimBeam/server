@@ -12,12 +12,12 @@ cmake_minimum_required (VERSION 2.8)
 
 project (MANGOS_MAP_EXTRACTOR)
 
-add_subdirectory (loadlib)
+include_directories (${MANGOS_MAP_EXTRACTOR_SOURCE_DIR}/loadlib ${MANGOS_MAP_EXTRACTOR_SOURCE_DIR}/../../dep/StormLib/src/)
 
-include_directories (${MANGOS_MAP_EXTRACTOR_SOURCE_DIR}/loadlib)
+add_subdirectory (loadlib)
 
 link_directories (${MANGOS_MAP_EXTRACTOR_SOURCE_DIR}/loadlib)
 
 add_executable (ad dbcfile.cpp System.cpp)
 
-target_link_libraries (ad loadlib libStormLib)
+target_link_libraries (ad loadlib StormLib bz2)

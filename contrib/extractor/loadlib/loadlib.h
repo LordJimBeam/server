@@ -25,6 +25,7 @@
 
 #include "StormLib.h"
 #include <deque>
+#include <string>
 
 #ifdef WIN32
 typedef __int64            int64;
