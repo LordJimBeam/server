@@ -1,4 +1,4 @@
-MaNGOS Three [![Build Status](https://travis-ci.org/mangosthree/server.png)](https://travis-ci.org/mangosthree/server)
+MaNGOS Three - LordJimBeam edition [![Build Status](https://travis-ci.org/LordJimBeam/server.png)](https://travis-ci.org/LordJimBeam/server)
 ============
 *MaNGOS Three* is a full featured server for [World of Warcraft][2], in its Cataclysm
 version supporting clients from the [patch 4.3.4][50] branch, specifically patch

@@ -22,6 +22,7 @@ script:
 #  - cd dep/libmpq/
 #  - ./autogen.sh
 #  - ./configure && make
+# StormLib
   - cd dep/StormLib/
   - make -f Makefile.linux libStorm.a
   - cd ../../contrib/extractor/
@@ -35,12 +36,12 @@ script:
 #  - cd _build
 #  - cmake -DCMAKE_INSTALL_PREFIX=../_install -DCMAKE_BUILD_TYPE=Debug ..
 #  - make -j4
-# vmap_extractor relies on libmpq which is not present
-#  - cd ../../vmap_extractor/
-#  - test -d _build || mkdir _build
-#  - cd _build
-#  - cmake -DCMAKE_INSTALL_PREFIX=../_install -DCMAKE_BUILD_TYPE=Debug ..
-#  - make -j4
+# vmap_extractor 
+  - cd ../../vmap_extractor/
+  - test -d _build || mkdir _build
+  - cd _build
+  - cmake -DCMAKE_INSTALL_PREFIX=../_install -DCMAKE_BUILD_TYPE=Debug ..
+  - make -j4
 # mmap breaks with the same error as vmap assembler (cannot find ace/config.h)
 #  - cd ../../mmap/
 #  - test -d _build || mkdir _build
