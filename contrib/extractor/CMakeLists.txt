@@ -16,8 +16,9 @@ include_directories (${MANGOS_MAP_EXTRACTOR_SOURCE_DIR}/loadlib ${MANGOS_MAP_EXT
 
 add_subdirectory (loadlib)
 
-link_directories (${MANGOS_MAP_EXTRACTOR_SOURCE_DIR}/loadlib)
+# needs make -f Makefile.linux libStorm.a in ../../dep/StormLib/ before
+link_directories (${MANGOS_MAP_EXTRACTOR_SOURCE_DIR}/loadlib ${MANGOS_MAP_EXTRACTOR_SOURCE_DIR}/../../dep/StormLib/)
 
 add_executable (ad dbcfile.cpp System.cpp)
 
-target_link_libraries (ad loadlib StormLib bz2)
+target_link_libraries (ad loadlib Storm bz2)
