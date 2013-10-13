@@ -47,8 +47,7 @@ script:
 #  - cd _build
 #  - cmake -DCMAKE_INSTALL_PREFIX=../_install -DCMAKE_BUILD_TYPE=Debug ..
 #  - make -j4
-#  - cd ../../../
-  - cd ../../
+  - cd ../../../
   - test -d _build || mkdir _build
   - test -d _install || mkdir _install
   - cd _build
