@@ -22,32 +22,35 @@ script:
 #  - cd dep/libmpq/
 #  - ./autogen.sh
 #  - ./configure && make
+# first, fix missing config.h for ACE
+  - echo '#include "config-linux.h"' >dep/ACE_wrappers/ace/config.h
 # StormLib
   - cd dep/StormLib/
   - make -f Makefile.linux libStorm.a
+# ad
   - cd ../../contrib/extractor/
   - test -d _build || mkdir _build
   - cd _build
   - cmake -DCMAKE_INSTALL_PREFIX=../_install -DCMAKE_BUILD_TYPE=Debug ..
   - make -j4
-# vmap_assembler broken for now
-#  - cd ../../vmap_assembler/
-#  - test -d _build || mkdir _build
-#  - cd _build
-#  - cmake -DCMAKE_INSTALL_PREFIX=../_install -DCMAKE_BUILD_TYPE=Debug ..
-#  - make -j4
+# vmap_assembler
+  - cd ../../vmap_assembler/
+  - test -d _build || mkdir _build
+  - cd _build
+  - cmake -DCMAKE_INSTALL_PREFIX=../_install -DCMAKE_BUILD_TYPE=Debug ..
+  - make -j4
 # vmap_extractor 
   - cd ../../vmap_extractor/
   - test -d _build || mkdir _build
   - cd _build
   - cmake -DCMAKE_INSTALL_PREFIX=../_install -DCMAKE_BUILD_TYPE=Debug ..
   - make -j4
-# mmap breaks with the same error as vmap assembler (cannot find ace/config.h)
-#  - cd ../../mmap/
-#  - test -d _build || mkdir _build
-#  - cd _build
-#  - cmake -DCMAKE_INSTALL_PREFIX=../_install -DCMAKE_BUILD_TYPE=Debug ..
-#  - make -j4
+# mmap  
+  - cd ../../mmap/
+  - test -d _build || mkdir _build
+  - cd _build
+  - cmake -DCMAKE_INSTALL_PREFIX=../_install -DCMAKE_BUILD_TYPE=Debug ..
+  - make -j4
   - cd ../../../
   - test -d _build || mkdir _build
   - test -d _install || mkdir _install
