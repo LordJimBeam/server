@@ -66,6 +66,10 @@ add_library(g3dlite
 	../../dep/src/g3dlite/TextOutput.cpp
 	../../dep/src/g3dlite/UprightFrame.cpp
 	../../dep/src/g3dlite/Vector2.cpp
+	../../dep/src/g3dlite/uint128.cpp
+	../../dep/src/g3dlite/FileSystem.cpp
+	../../dep/src/g3dlite/PhysicsFrame.cpp
+	../../dep/src/g3dlite/RegistryUtil.cpp
 	)
 
 add_library(vmap
